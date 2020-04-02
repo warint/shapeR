@@ -82,12 +82,84 @@
 
     
     
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">shapeR</span>)</pre></body></html></div>
+<div id="shaper" class="section level1">
+<h1 class="hasAnchor">
+<a href="#shaper" class="anchor"></a>shapeR</h1>
+<p>shapeR aims to simplify GIS mapping by giving access through simple R functions to maps from different sources.</p>
+<p>The list of available maps is shown in the following table:</p>
+<table class="table">
+<thead><tr class="header">
+<th>Regions</th>
+<th>Sources</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>World</td>
+<td><a href="https://www.naturalearthdata.com/" class="uri">https://www.naturalearthdata.com/</a></td>
+</tr>
+<tr class="even">
+<td>Countries</td>
+<td><a href="https://gadm.org/download_world.html" class="uri">https://gadm.org/download_world.html</a></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div id="installation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#installation" class="anchor"></a>Installation</h2>
+<p>You can install the released version of ‘shapeR’ from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
+<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"shapeR"</span>)</pre></body></html></div>
+<p>Or you can install the current development version of ‘shapeR’ with:</p>
+<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"devtools"</span>)
+<span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"warint/shapeR"</span>)</pre></body></html></div>
+</div>
+<div id="how-to" class="section level2">
+<h2 class="hasAnchor">
+<a href="#how-to" class="anchor"></a>How-To</h2>
+<div id="step-1-getting-the-countrys-iso-code" class="section level3">
+<h3 class="hasAnchor">
+<a href="#step-1-getting-the-countrys-iso-code" class="anchor"></a>Step 1: Getting the country’s ISO code</h3>
+<p>A user needs to enter the ISO code of a country. To have access to this code, the following function provides this information.</p>
+<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="../reference/shaper_country.html">shaper_country</a></span>() <span class="co"># A list of all countries will be produced</span>
+
+<span class="fu"><a href="../reference/shaper_country.html">shaper_country</a></span>(<span class="kw">country</span> <span class="kw">=</span> <span class="st">"Canada"</span>) <span class="co"># The ISO code for Canada will be produced</span>
+
+<span class="fu"><a href="../reference/shaper_country.html">shaper_country</a></span>(<span class="st">"Canada"</span>) <span class="co"># The ISO code for Canada will be produced</span></pre></body></html></div>
+</div>
+<div id="step-2-choosing-the-shapefiles-level-of-granularity" class="section level3">
+<h3 class="hasAnchor">
+<a href="#step-2-choosing-the-shapefiles-level-of-granularity" class="anchor"></a>Step 2: Choosing the shapefile’s level of granularity</h3>
+<p>Users can visualize which level is available for the choosen country here: <a href="https://gadm.org/download_country_v3.html" class="uri">https://gadm.org/download_country_v3.html</a></p>
+<p>The level goes from 1 to 5, with 0 being the country level. You can access the metadata here: <a href="https://gadm.org/metadata.html" class="uri">https://gadm.org/metadata.html</a></p>
+<p>Be aware that not all countries have the five levels of granularity.</p>
+</div>
+<div id="step-3-getting-the-data" class="section level3">
+<h3 class="hasAnchor">
+<a href="#step-3-getting-the-data" class="anchor"></a>Step 3: Getting the data</h3>
+<p>Once the user knows the ISO code and the wanted level, s.he can collect the data in a very easy way through this function:</p>
+<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="fu"><a href="../reference/shaper_data.html">shaper_data</a></span>(<span class="kw">country_code</span> <span class="kw">=</span> <span class="st">"CAN"</span>) <span class="co"># The shapefile for Canada with level 0 (the default) will be produced</span>
+
+<span class="fu"><a href="../reference/shaper_data.html">shaper_data</a></span>(<span class="kw">country_code</span> <span class="kw">=</span> <span class="st">"CAN"</span>, <span class="kw">level</span> <span class="kw">=</span> <span class="fl">3</span>) <span class="co"># The shapefile for Canada with level 3 will be produced</span>
+
+<span class="fu"><a href="../reference/shaper_data.html">shaper_data</a></span>(<span class="st">"CAN"</span>, <span class="fl">3</span>) <span class="co"># The shapefile for Canada with level 3 will be produced</span></pre></body></html></div>
+</div>
+</div>
+<div id="acknowledgments" class="section level2">
+<h2 class="hasAnchor">
+<a href="#acknowledgments" class="anchor"></a>Acknowledgments</h2>
+<p>The author would like to thank the Center for Interuniversity Research and Analysis of Organizations (CIRANO, Montreal) for its support, as well as Thibault Senegas, Marine Leroi, Martin Paquette and Anne Sophie Gill at SKEMA Global Lab in AI. The usual caveats apply.</p>
+</div>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-      </div>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
+</div>
 
 </div>
 

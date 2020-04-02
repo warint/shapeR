@@ -1,25 +1,69 @@
 
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
 # shapeR
 
-<!-- badges: start -->
-<!-- badges: end -->
+shapeR aims to simplify GIS mapping by giving access through simple R
+functions to maps from different sources.
 
-The goal of shapeR is to ...
+The list of available maps is shown in the following table:
+
+| Regions   | Sources                                |
+| --------- | -------------------------------------- |
+| World     | <https://www.naturalearthdata.com/>    |
+| Countries | <https://gadm.org/download_world.html> |
 
 ## Installation
 
-You can install the released version of shapeR from [CRAN](https://CRAN.R-project.org) with:
+You can install the current development version of ‘shapeR’ with:
 
 ``` r
-install.packages("shapeR")
+install.packages("devtools")
+devtools::install_github("warint/shapeR")
 ```
 
-## Example
+## How-To
 
-This is a basic example which shows you how to solve a common problem:
+### Step 1: Getting the country’s ISO code
+
+A user needs to enter the ISO code of a country. To have access to this
+code, the following function provides this information.
 
 ``` r
-library(shapeR)
-## basic example code
+shaper_country() # A list of all countries will be produced
+
+shaper_country(country = "Canada") # The ISO code for Canada will be produced
+
+shaper_country("Canada") # The ISO code for Canada will be produced
 ```
 
+### Step 2: Choosing the shapefile’s level of granularity
+
+Users can visualize which level is available for the choosen country
+here: <https://gadm.org/download_country_v3.html>
+
+The level goes from 1 to 5, with 0 being the country level. You can
+access the metadata here: <https://gadm.org/metadata.html>
+
+Be aware that not all countries have the five levels of granularity.
+
+### Step 3: Getting the data
+
+Once the user knows the ISO code and the wanted level, s.he can collect
+the data in a very easy way through this
+function:
+
+``` r
+shaper_data(country_code = "CAN") # The shapefile for Canada with level 0 (the default) will be produced
+
+shaper_data(country_code = "CAN", level = 3) # The shapefile for Canada with level 3 will be produced
+
+shaper_data("CAN", 3) # The shapefile for Canada with level 3 will be produced
+```
+
+## Acknowledgments
+
+The author would like to thank the Center for Interuniversity Research
+and Analysis of Organizations (CIRANO, Montreal) for its support, as
+well as Thibault Senegas, Marine Leroi, Martin Paquette and Anne Sophie
+Gill at SKEMA Global Lab in AI. The usual caveats apply.

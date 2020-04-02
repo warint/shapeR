@@ -23,17 +23,11 @@ The list of available maps is shown in the following table:
 |-----------|----------------------------------------|
 | World     | <https://www.naturalearthdata.com/>    |
 | Countries | <https://gadm.org/download_world.html> |
-|           |                                        |
+
 
 ## Installation
 
-You can install the released version of 'shapeR' from [CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("shapeR")
-```
-
-Or you can install the current development version of ‘shapeR’ with:
+You can install the current development version of ‘shapeR’ with:
 
 ``` r
 install.packages("devtools")
@@ -46,7 +40,7 @@ devtools::install_github("warint/shapeR")
 
 A user needs to enter the ISO code of a country. To have access to this code, the following function provides this information.
 
-```{r example}
+```{r,eval=FALSE}
 shaper_country() # A list of all countries will be produced
 
 shaper_country(country = "Canada") # The ISO code for Canada will be produced
@@ -66,7 +60,7 @@ Be aware that not all countries have the five levels of granularity.
 
 Once the user knows the ISO code and the wanted level, s.he can collect the data in a very easy way through this function:
 
-```{r example}
+```{r,eval=FALSE}
 shaper_data(country_code = "CAN") # The shapefile for Canada with level 0 (the default) will be produced
 
 shaper_data(country_code = "CAN", level = 3) # The shapefile for Canada with level 3 will be produced
