@@ -24,7 +24,6 @@ The list of available maps is shown in the following table:
 |-----------|----------------------------------------|
 | World     | <https://www.naturalearthdata.com/>    |
 | Countries | <https://gadm.org/download_world.html> |
-|           |                                        |
 
 ## Installation
 
