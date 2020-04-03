@@ -38,7 +38,7 @@ shaper_data <- function(country_code, level=0){
 
     # reading the shapefile
     csv_file <- file.path(paste0(tempdir(), "/world.shp"))
-    map <- rgdal::readOGR(csv_file)
+    map <- rgdal::readOGR(csv_file, verbose = FALSE)
   }
 
   else {
@@ -54,7 +54,7 @@ shaper_data <- function(country_code, level=0){
 
     # reading the shapefile
     csv_file <- file.path(paste0(tempdir(), "/gadm36_", country_code, "_", level, ".shp"))
-    map <- rgdal::readOGR(csv_file)
+    map <- rgdal::readOGR(csv_file, verbose = FALSE)
   }
   unlink(tempdir())
   return(map)

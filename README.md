@@ -4,9 +4,9 @@
 # shapeR
 
 shapeR aims to simplify GIS mapping by giving access through simple R
-functions to maps from different sources.
+functions to shapefiles from different sources.
 
-The list of available maps is shown in the following table:
+The list of available shapefiles is shown in the following table:
 
 | Regions   | Sources                                |
 | --------- | -------------------------------------- |
