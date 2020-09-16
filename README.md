@@ -65,5 +65,4 @@ shaper_data("CAN", 3) # The shapefile for Canada with level 3 will be produced
 
 The author would like to thank the Center for Interuniversity Research
 and Analysis of Organizations (CIRANO, Montreal) for its support, as
-well as Thibault Senegas, Marine Leroi, Martin Paquette and Anne Sophie
-Gill at SKEMA Global Lab in AI. The usual caveats apply.
+well as Thibault Senegas, Marine Leroi, and artin Paquette. The usual caveats apply.
