@@ -2,7 +2,7 @@ Package: shapeR
 Type: Package
 Title: Client for accessing shapefiles
 Version: 0.1.0
-Authors@R: person("Thierry", "Warin", email = "thierry.warin@skema.edu", role =c("aut", "cre"), comment = c(ORCID = "0000-0002-5921-3428") )
+Authors@R: person("Thierry", "Warin", email = "thierry.warin@hec.ca", role =c("aut", "cre"), comment = c(ORCID = "0000-0002-5921-3428") )
 Description: shapeR aims to simplify GIS mapping by giving access through simple R functions to shapefiles from different sources.
 License: MIT + file LICENSE
 Encoding: UTF-8
